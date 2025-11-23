@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unity Film Festival 2025 — Where Young Creators Take the Screen</title>
+  <meta name="description" content="Unity Film Festival is a youth filmmaking experience for ages 7–17. Submit your short films, reels, and visual stories. Live screenings, community, and real industry insight. November 29, 2025 in St. Louis.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Unity Film Festival 2025">
+  <meta property="og:description" content="Where young creators take the screen. Submit your film. Get your tickets. November 29, 2025 — St. Louis, MO.">
+  <meta property="og:type" content="website">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Montserrat:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --unity-black: #161616;
+      --unity-off-black: #1e1e1e;
+      --unity-white: #ffffff;
+      --unity-off-white: #f4edde;
+      --unity-gold: #ffbd59;
+      --unity-gold-text: #faaf40;
+      --unity-red: #bc2025;
+      --unity-text-dark: #231f20;
+      
+      --font-display: 'Montserrat', sans-serif;
+      --font-mono: 'IBM Plex Mono', monospace;
+    }
+
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-display);
+      background: var(--unity-black);
+      color: var(--unity-white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ===== UTILITIES ===== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .gold { color: var(--unity-gold-text); }
+    .red-dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background: var(--unity-red);
+      border-radius: 50%;
+      margin-left: 8px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-block;
+      padding: 16px 40px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: var(--unity-gold);
+      color: var(--unity-black);
+    }
+
+    .btn-primary:hover {
+      background: var(--unity-gold-text);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(255, 189, 89, 0.3);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--unity-white);
+      border: 2px solid var(--unity-white);
+    }
+
+    .btn-secondary:hover {
+      background: var(--unity-white);
+      color: var(--unity-black);
+    }
+
+    /* ===== NAVIGATION ===== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 20px 0;
+      transition: all 0.3s ease;
+    }
+
+    .nav.scrolled {
+      background: rgba(22, 22, 22, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 15px 0;
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo img {
+      height: 50px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--unity-gold);
+    }
+
+    .nav-cta {
+      padding: 12px 24px;
+      font-size: 12px;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .mobile-menu-btn span {
+      width: 25px;
+      height: 2px;
+      background: var(--unity-white);
+      transition: all 0.3s ease;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.4;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(22, 22, 22, 0.3) 0%,
+        rgba(22, 22, 22, 0.7) 50%,
+        rgba(22, 22, 22, 1) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 120px 0 80px;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--unity-gold);
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
+      animation-delay: 0.2s;
+    }
+
+    .hero-title {
+      font-weight: 900;
+      font-size: clamp(3rem, 10vw, 7rem);
+      letter-spacing: 0.02em;
+      line-height: 0.95;
+      margin-bottom: 16px;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
+      animation-delay: 0.4s;
+    }
+
+    .hero-subtitle {
+      font-weight: 300;
+      font-size: clamp(1rem, 3vw, 1.5rem);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
+      animation-delay: 0.6s;
+    }
+
+    .hero-theme {
+      font-weight: 900;
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      color: var(--unity-gold-text);
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
+      animation-delay: 0.8s;
+    }
+
+    .hero-details {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      opacity: 0.8;
+      margin-bottom: 50px;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
+      animation-delay: 1s;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
+      animation-delay: 1.2s;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 2s;
+    }
+
+    .scroll-indicator span {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 60px;
+      background: linear-gradient(to bottom, var(--unity-gold), transparent);
+      animation: scrollPulse 2s infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 1; transform: scaleY(1); }
+      50% { opacity: 0.5; transform: scaleY(0.8); }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* ===== SECTIONS BASE ===== */
+    section {
+      padding: 120px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .section-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--unity-gold);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-weight: 900;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      letter-spacing: 0.02em;
+    }
+
+    /* ===== ABOUT SECTION ===== */
+    .about {
+      background: var(--unity-off-black);
+      position: relative;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-image {
+      position: relative;
+    }
+
+    .about-image img {
+      border-radius: 4px;
+    }
+
+    .about-image::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      right: 20px;
+      bottom: 20px;
+      border: 2px solid var(--unity-gold);
+      z-index: -1;
+    }
+
+    .about-content h2 {
+      font-weight: 900;
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 30px;
+      line-height: 1.1;
+    }
+
+    .about-content p {
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      opacity: 0.9;
+    }
+
+    .about-tagline {
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--unity-gold-text);
+      margin-top: 30px;
+      line-height: 1.6;
+    }
+
+    /* ===== CONTENT SECTION ===== */
+    .content-call {
+      text-align: center;
+      background: var(--unity-black);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .content-call::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255, 189, 89, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .content-call h2 {
+      font-weight: 900;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      margin-bottom: 30px;
+    }
+
+    .content-types {
+      font-family: var(--font-mono);
+      font-size: 18px;
+      letter-spacing: 0.05em;
+      margin-bottom: 40px;
+      opacity: 0.8;
+    }
+
+    .content-message {
+      font-weight: 300;
+      font-size: 20px;
+      max-width: 600px;
+      margin: 0 auto 50px;
+      line-height: 1.8;
+    }
+
+    .theme-box {
+      display: inline-block;
+      background: var(--unity-off-black);
+      padding: 40px 60px;
+      margin-bottom: 50px;
+      position: relative;
+    }
+
+    .theme-box::before,
+    .theme-box::after {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border: 2px solid var(--unity-gold);
+    }
+
+    .theme-box::before {
+      top: -10px;
+      left: -10px;
+      border-right: none;
+      border-bottom: none;
+    }
+
+    .theme-box::after {
+      bottom: -10px;
+      right: -10px;
+      border-left: none;
+      border-top: none;
+    }
+
+    .theme-label {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.3em;
+      color: var(--unity-gold);
+      margin-bottom: 10px;
+    }
+
+    .theme-text {
+      font-weight: 900;
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      letter-spacing: 0.1em;
+    }
+
+    .theme-subtext {
+      font-weight: 300;
+      font-size: 16px;
+      margin-top: 15px;
+      opacity: 0.7;
+    }
+
+    /* ===== HOW IT WORKS ===== */
+    .how-it-works {
+      background: var(--unity-off-black);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .step {
+      text-align: center;
+      padding: 40px 30px;
+      position: relative;
+    }
+
+    .step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 80px;
+      right: -20px;
+      width: 40px;
+      height: 2px;
+      background: var(--unity-gold);
+    }
+
+    .step-number {
+      font-family: var(--font-mono);
+      font-size: 64px;
+      font-weight: 700;
+      color: var(--unity-gold);
+      opacity: 0.3;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .step h3 {
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .step p {
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.7;
+      opacity: 0.8;
+    }
+
+    /* ===== FOR CREATORS ===== */
+    .for-creators {
+      background: var(--unity-black);
+      text-align: center;
+    }
+
+    .creator-intro {
+      font-weight: 300;
+      font-size: 20px;
+      max-width: 600px;
+      margin: 0 auto 60px;
+      opacity: 0.9;
+    }
+
+    .creator-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto 60px;
+    }
+
+    .creator-type {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      letter-spacing: 0.05em;
+      padding: 20px;
+      background: var(--unity-off-black);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .creator-type:hover {
+      border-color: var(--unity-gold);
+      background: rgba(255, 189, 89, 0.1);
+    }
+
+    .creator-closing {
+      font-weight: 600;
+      font-size: 24px;
+      color: var(--unity-gold-text);
+    }
+
+    /* ===== EXPERIENCE SECTION ===== */
+    .experience {
+      background: var(--unity-off-black);
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+
+    .experience-card {
+      padding: 50px 40px;
+      background: var(--unity-black);
+      border-left: 3px solid var(--unity-gold);
+      transition: all 0.3s ease;
+    }
+
+    .experience-card:hover {
+      transform: translateX(10px);
+    }
+
+    .experience-card h3 {
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      color: var(--unity-gold);
+    }
+
+    .experience-card p {
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.7;
+      opacity: 0.8;
+    }
+
+    /* ===== GALLERY SECTION ===== */
+    .gallery {
+      background: var(--unity-black);
+      padding: 80px 0;
+    }
+
+    .gallery-strip {
+      display: flex;
+      gap: 20px;
+      overflow: hidden;
+    }
+
+    .gallery-strip img {
+      flex: 0 0 400px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 4px;
+      filter: grayscale(30%);
+      transition: all 0.3s ease;
+    }
+
+    .gallery-strip img:hover {
+      filter: grayscale(0%);
+      transform: scale(1.02);
+    }
+
+    /* ===== DETAILS SECTION ===== */
+    .details {
+      background: linear-gradient(135deg, var(--unity-off-black) 0%, var(--unity-black) 100%);
+      position: relative;
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .details-content h2 {
+      font-weight: 900;
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 40px;
+    }
+
+    .detail-item {
+      margin-bottom: 30px;
+    }
+
+    .detail-label {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      color: var(--unity-gold);
+      margin-bottom: 8px;
+    }
+
+    .detail-value {
+      font-weight: 600;
+      font-size: 20px;
+    }
+
+    .detail-value.large {
+      font-size: 28px;
+    }
+
+    .details-image {
+      position: relative;
+    }
+
+    .details-image img {
+      border-radius: 4px;
+    }
+
+    /* ===== FAQ SECTION ===== */
+    .faq {
+      background: var(--unity-black);
+    }
+
+    .faq-grid {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 30px 0;
+    }
+
+    .faq-question {
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 15px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-question::after {
+      content: '+';
+      font-size: 24px;
+      color: var(--unity-gold);
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.active .faq-question::after {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.7;
+      opacity: 0.8;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 200px;
+    }
+
+    .faq-contact {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 16px;
+    }
+
+    .faq-contact a {
+      color: var(--unity-gold);
+      border-bottom: 1px solid var(--unity-gold);
+    }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      background: var(--unity-gold);
+      color: var(--unity-black);
+      text-align: center;
+      padding: 100px 0;
+    }
+
+    .cta-section h2 {
+      font-weight: 900;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: 20px;
+    }
+
+    .cta-section p {
+      font-size: 18px;
+      margin-bottom: 40px;
+      opacity: 0.8;
+    }
+
+    .cta-section .btn {
+      background: var(--unity-black);
+      color: var(--unity-white);
+    }
+
+    .cta-section .btn:hover {
+      background: var(--unity-off-black);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--unity-black);
+      padding: 80px 0 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+
+    .footer-brand img {
+      height: 60px;
+      margin-bottom: 20px;
+    }
+
+    .footer-tagline {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      color: var(--unity-gold);
+      margin-bottom: 20px;
+    }
+
+    .footer-description {
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 1.7;
+      opacity: 0.7;
+      max-width: 300px;
+    }
+
+    .footer-column h4 {
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .footer-column a {
+      display: block;
+      font-weight: 300;
+      font-size: 14px;
+      padding: 8px 0;
+      opacity: 0.7;
+      transition: all 0.3s ease;
+    }
+
+    .footer-column a:hover {
+      opacity: 1;
+      color: var(--unity-gold);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-copyright {
+      font-size: 13px;
+      opacity: 0.5;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-social a {
+      font-size: 13px;
+      opacity: 0.5;
+      transition: all 0.3s ease;
+    }
+
+    .footer-social a:hover {
+      opacity: 1;
+      color: var(--unity-gold);
+    }
+
+    /* ===== MOBILE NAVIGATION ===== */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--unity-black);
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      transform: translateX(100%);
+      transition: transform 0.4s ease;
+    }
+
+    .mobile-menu.active {
+      transform: translateX(0);
+    }
+
+    .mobile-menu a {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .mobile-menu-close {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      background: none;
+      border: none;
+      color: var(--unity-white);
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .nav-links {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: flex;
+      }
+
+      .about-grid,
+      .details-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .about-image {
+        order: -1;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .step:not(:last-child)::after {
+        display: none;
+      }
+
+      .experience-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 80px 0;
+      }
+
+      .creator-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-strip img {
+        flex: 0 0 300px;
+        height: 220px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        padding: 0 20px;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .creator-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .theme-box {
+        padding: 30px;
+      }
+    }
+
+    /* ===== FILM STRIP DECORATION ===== */
+    .film-strip {
+      padding: 40px 0;
+      background: var(--unity-black);
+      overflow: hidden;
+    }
+
+    .film-strip-inner {
+      display: flex;
+      justify-content: center;
+    }
+
+    .film-strip img {
+      max-height: 200px;
+      width: auto;
+    }
+
+    /* ===== SCROLL ANIMATIONS ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#" class="nav-logo">
+          <img src="assets/Unity-Film-Festival_WHITE-No-Background.png" alt="Unity Film Festival">
+        </a>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#how-it-works">How It Works</a>
+          <a href="#details">Details</a>
+          <a href="#faq">FAQ</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeG-Gd7QVxAXGe4ai6IWTcJu3o0XklcMBCz4sn5J2hQOSubSw/viewform" class="btn btn-primary nav-cta">Submit Film</a>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" id="mobileMenuClose">×</button>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#how-it-works" class="mobile-link">How It Works</a>
+    <a href="#details" class="mobile-link">Details</a>
+    <a href="#faq" class="mobile-link">FAQ</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeG-Gd7QVxAXGe4ai6IWTcJu3o0XklcMBCz4sn5J2hQOSubSw/viewform" class="btn btn-primary">Submit Film</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="assets/Gemini_Generated_Image_w7fd9kw7fd9kw7fd.png" alt="Young filmmaker in church">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <p class="hero-eyebrow">St. Louis • November 29, 2025</p>
+        <h1 class="hero-title">UNITY<br>FILM FESTIVAL</h1>
+        <p class="hero-subtitle">Where Young Creators Take the Screen</p>
+        <p class="hero-theme">IDENTITY OVER IMAGE</p>
+        <p class="hero-details">Saturday, November 29, 2025 • 12:00 PM – 4:00 PM<span class="red-dot"></span></p>
+        <div class="hero-buttons">
+          <a href="#" class="btn btn-primary">Get Tickets</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeG-Gd7QVxAXGe4ai6IWTcJu3o0XklcMBCz4sn5J2hQOSubSw/viewform" class="btn btn-secondary">Submit Your Film</a>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Film Strip -->
+  <div class="film-strip">
+    <div class="film-strip-inner">
+      <img src="assets/Black And White Grunge Short Film Festival Poster (2).png" alt="Film strip">
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid reveal">
+        <div class="about-image">
+          <img src="assets/Gemini_Generated_Image_axotvfaxotvfaxot.png" alt="Young filmmaker with camera">
+        </div>
+        <div class="about-content">
+          <h2>THIS ISN'T<br>A POP-UP.</h2>
+          <p>The Unity Film Festival is a youth media production career experience designed to expose students ages 7–17 to real opportunities in filmmaking, digital media, and content creation.</p>
+          <p>This is not a talent show. It's a structured, educational, hands-on pipeline event designed to build the next generation of creators.</p>
+          <p>In four hours, we introduce young people to the full production cycle—story, filming, sound, editing, and screening.</p>
+          <p class="about-tagline">It's a platform.<br>It's a movement.<br>It's your moment to be seen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- We Want Your Content -->
+  <section class="content-call" id="submit">
+    <div class="container">
+      <div class="reveal">
+        <h2>WE WANT YOUR<br><span class="gold">CONTENT.</span></h2>
+        <p class="content-types">Short films • Reels • TikToks • Edits • Visual stories</p>
+        <p class="content-message">Whatever you create—submit it. We're building something new. A new wave. A new feed. A new voice.</p>
+        
+        <div class="theme-box">
+          <p class="theme-label">2025 Theme</p>
+          <p class="theme-text">IDENTITY OVER IMAGE</p>
+          <p class="theme-subtext">Tell the story only you can tell.</p>
+        </div>
+        
+        <div>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeG-Gd7QVxAXGe4ai6IWTcJu3o0XklcMBCz4sn5J2hQOSubSw/viewform" class="btn btn-primary">Submit Your Film</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">The Process</p>
+        <h2 class="section-title">HOW IT WORKS</h2>
+      </div>
+      
+      <div class="steps reveal">
+        <div class="step">
+          <div class="step-number">01</div>
+          <h3>Submit for Free</h3>
+          <p>Upload your film via our submission form. No fees. No barriers. Just your story.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">02</div>
+          <h3>Get the Call</h3>
+          <p>If your project is selected, we'll send you your official screening time.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">03</div>
+          <h3>Show Up + Shine</h3>
+          <p>Celebrate with friends, family, and creators at the live screening event.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- For Creators -->
+  <section class="for-creators">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Who's This For</p>
+        <h2 class="section-title">FOR CREATIVES<br>AGES 7–17</h2>
+      </div>
+      
+      <p class="creator-intro reveal">This is for the young visionaries. The ones who see the world differently and want to show it.</p>
+      
+      <div class="creator-grid reveal">
+        <div class="creator-type">Directors</div>
+        <div class="creator-type">Editors</div>
+        <div class="creator-type">Actors</div>
+        <div class="creator-type">TikTok Filmmakers</div>
+        <div class="creator-type">Cinematographers</div>
+        <div class="creator-type">Writers</div>
+        <div class="creator-type">Animators</div>
+        <div class="creator-type">Musicians & Sound</div>
+        <div class="creator-type">Content Creators</div>
+      </div>
+      
+      <p class="creator-closing reveal">If you create, you belong here.</p>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <div class="gallery">
+    <div class="gallery-strip">
+      <img src="assets/Gemini_Generated_Image_67c41v67c41v67c4.png" alt="Young creators at arch">
+      <img src="assets/Gemini_Generated_Image_henf98henf98henf.png" alt="Creative workshop">
+      <img src="assets/Gemini_Generated_Image_ovqlxbovqlxbovql.png" alt="Kids with cameras">
+      <img src="assets/Gemini_Generated_Image_sjffrhsjffrhsjff.png" alt="Screening room">
+    </div>
+  </div>
+
+  <!-- Experience -->
+  <section class="experience">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">The Experience</p>
+        <h2 class="section-title">WHAT TO EXPECT</h2>
+      </div>
+      
+      <div class="experience-grid reveal">
+        <div class="experience-card">
+          <h3>Live Screenings</h3>
+          <p>See your work on the big screen. Watch alongside fellow creators, friends, and family.</p>
+        </div>
+        <div class="experience-card">
+          <h3>Community</h3>
+          <p>Connect with other young filmmakers. Build relationships. Find your people.</p>
+        </div>
+        <div class="experience-card">
+          <h3>Creative Culture</h3>
+          <p>Step into an environment built for creators. Learn. Be inspired. Level up.</p>
+        </div>
+        <div class="experience-card">
+          <h3>Real Insight</h3>
+          <p>Hear from industry professionals who've done it at the highest level.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Details -->
+  <section class="details" id="details">
+    <div class="container">
+      <div class="details-grid reveal">
+        <div class="details-content">
+          <h2>THE DETAILS</h2>
+          
+          <div class="detail-item">
+            <p class="detail-label">Date & Time</p>
+            <p class="detail-value large">Saturday, November 29, 2025<br>12:00 PM – 4:00 PM</p>
+          </div>
+          
+          <div class="detail-item">
+            <p class="detail-label">Location</p>
+            <p class="detail-value">Christian Believers Ministries<br>6932 Lansdowne Ave<br>St. Louis, MO 63109</p>
+          </div>
+          
+          <div class="detail-item">
+            <p class="detail-label">Host</p>
+            <p class="detail-value">Craig James</p>
+          </div>
+          
+          <div style="margin-top: 40px;">
+            <a href="#" class="btn btn-primary">Get Tickets</a>
+          </div>
+        </div>
+        
+        <div class="details-image">
+          <img src="assets/Gemini_Generated_Image_henf98henf98henf.png" alt="Workshop session">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Need Answers?</p>
+        <h2 class="section-title">QUESTIONS?</h2>
+      </div>
+      
+      <div class="faq-grid reveal">
+        <div class="faq-item">
+          <div class="faq-question">Who can submit a film?</div>
+          <div class="faq-answer">Any young creator ages 7–17. If you made something—a short film, a reel, a TikTok, an edit, a visual story—you can submit it.</div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Does it cost anything to submit?</div>
+          <div class="faq-answer">No. Submissions are completely free. No fees. No barriers.</div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">What formats do you accept?</div>
+          <div class="faq-answer">We accept .mp4, .mov, and .avi files. Short films, reels, TikToks, edits, visual stories—if you created it, submit it.</div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Is there a theme?</div>
+          <div class="faq-answer">Yes. This year's theme is "Identity Over Image." Tell the story only you can tell.</div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Does my parent/guardian need to attend?</div>
+          <div class="faq-answer">Yes. All attendees ages 7–17 must be accompanied by a parent or guardian.</div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">How will I know if my film is selected?</div>
+          <div class="faq-answer">If your project is selected, we'll email you with your official screening time before the event.</div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">What should I bring?</div>
+          <div class="faq-answer">Bring yourself, your creativity, and anyone you want to celebrate with. We'll handle the rest.</div>
+        </div>
+      </div>
+      
+      <p class="faq-contact reveal">
+        Still have questions? Email us at <a href="mailto:Unityfilmfestival7@gmail.com">Unityfilmfestival7@gmail.com</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>YOUR MOMENT<br>TO BE SEEN.</h2>
+      <p>Submit your film. Get your tickets. Join the movement.</p>
+      <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+        <a href="#" class="btn">Get Tickets</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeG-Gd7QVxAXGe4ai6IWTcJu3o0XklcMBCz4sn5J2hQOSubSw/viewform" class="btn" style="background: transparent; border: 2px solid var(--unity-black);">Submit Your Film</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/Unity-Film-Festival_WHITE-No-Background.png" alt="Unity Film Festival">
+          <p class="footer-tagline">IDENTITY OVER IMAGE</p>
+          <p class="footer-description">A youth media production career experience for ages 7–17. Building the next generation of creators.</p>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <a href="#about">About</a>
+          <a href="#how-it-works">How It Works</a>
+          <a href="#details">Event Details</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Take Action</h4>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeG-Gd7QVxAXGe4ai6IWTcJu3o0XklcMBCz4sn5J2hQOSubSw/viewform">Submit Your Film</a>
+          <a href="#">Get Tickets</a>
+          <a href="mailto:Unityfilmfestival7@gmail.com">Contact Us</a>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Event Info</h4>
+          <p style="font-weight: 300; font-size: 14px; opacity: 0.7; line-height: 1.7;">
+            November 29, 2025<br>
+            12:00 PM – 4:00 PM<br>
+            St. Louis, MO
+          </p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2025 Unity Film Festival. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="#">Instagram</a>
+          <a href="#">TikTok</a>
+          <a href="#">Facebook</a>
+          <a href="#">YouTube</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navigation scroll effect
+    const nav = document.getElementById('nav');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuClose = document.getElementById('mobileMenuClose');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+
+    mobileMenuClose.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // FAQ accordion
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      
+      question.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        
+        // Close all items
+        faqItems.forEach(i => i.classList.remove('active'));
+        
+        // Open clicked item if it wasn't active
+        if (!isActive) {
+          item.classList.add('active');
+        }
+      });
+    });
+
+    // Scroll reveal animations
+    const reveals = document.querySelectorAll('.reveal');
+    
+    const revealOnScroll = () => {
+      reveals.forEach(el => {
+        const windowHeight = window.innerHeight;
+        const revealTop = el.getBoundingClientRect().top;
+        const revealPoint = 150;
+        
+        if (revealTop < windowHeight - revealPoint) {
+          el.classList.add('active');
+        }
+      });
+    };
+    
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll(); // Run on load
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
